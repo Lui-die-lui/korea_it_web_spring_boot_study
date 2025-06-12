@@ -46,7 +46,7 @@ public class PostController {
     // 의존성 주입, Dependency Injection -> DI
     // 필요한 객체(의존성)를 직접 만들지 않고, 외부(스프링부트)에서 대신 넣어주는 것
 
-    public  PostController(PostService postService){ // 생성자
+    public  PostController(PostService postService) { // 생성자
         this.postService = postService;
     }
 
@@ -63,7 +63,4 @@ public class PostController {
         return "어떤 게시물의 유저 정보";
     }
 
-    public PostService getPostService() {
-        return postService;
-    }
 }

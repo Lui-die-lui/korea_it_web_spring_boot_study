@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 public class PostService { // 처리는 service 에서 거의 이루어짐
     private final PostRepository postRepository;
 
-//    public ..? 갑자기 졸라빨라짐
-
+    public PostService(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
     public String getPost() {
-        return "서비스에서 보낸 어떠한 게시물의 데이터";
+        String result = postRepository.getPost();
+        return result;
          }
 }
