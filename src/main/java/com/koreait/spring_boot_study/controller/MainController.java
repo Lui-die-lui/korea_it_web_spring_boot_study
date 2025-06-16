@@ -37,7 +37,7 @@ public class MainController {
     //SSR에 동적을 추가하면 Thymeleaf를 적용하면 된다
     //html 파일은 static->templates에 있어야 한다
     //Thymeleaf
-    //서버에서 HTML을 렌더링할때, 자바 데이터를 끼워 넣을 수 잇게 해주는 템플릿 엔진
+    //서버에서 HTML을 렌더링할때, 자바 데이터를 끼워 넣을 수 있게 해주는 템플릿 엔진
 
     @GetMapping("/profile")
     public String getProfile(Model model) {  // Model = org.springframework.ui 로!
@@ -71,6 +71,12 @@ public class MainController {
         users.add(userDto);
         model.addAttribute("message",name+"님, 가입을 환영합니다.");
         return "signup-result";
+    }
+
+    @GetMapping("/users")
+    public String userList(Model model) {
+        model.addAttribute("users",users);
+        return "users"; // html 파일명
     }
 
 }
